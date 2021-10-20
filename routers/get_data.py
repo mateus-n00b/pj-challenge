@@ -28,12 +28,13 @@ def get_comex_data():
         data.to_json(),
         200)
 
-
+# Limited to 30% of the total file size
 @get_data_router.route('/data/comex', methods=['GET'])
 def get_comex():
     args = request.args
     max_rows = args.get('max_rows')
-    data = get_max_rows(df_comex, max_rows)
+    print(len(df_comex.index)*0.02)
+    data = get_max_rows(df_comex.sample(frac=1), int(len(df_comex.index)*0.02))
 
     return Response(
         data.to_json(),
@@ -88,7 +89,7 @@ def get_sh2_ncm():
 def get_sh2():
     args = request.args
     max_rows = args.get('max_rows')
-    data = get_max_rows(df_sh2, max_rows)
+    data = get_max_rows(df_sh2, len(df_sh2.index))
 
     return Response(
         data.to_json(),
@@ -100,7 +101,7 @@ def get_sh2():
 def get_d_via():
     args = request.args
     max_rows = args.get('max_rows')
-    data = get_max_rows(df_via, max_rows)
+    data = get_max_rows(df_via, len(df_via.index))
 
     return Response(
         data.to_json(),

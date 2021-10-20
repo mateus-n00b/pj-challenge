@@ -1,9 +1,9 @@
 from flask import Flask
 from routers.get_data import get_data_router
-from dataviz import dashboard
 
 app = Flask(__name__)
 app.register_blueprint(get_data_router)
+
 
 # dash = dashboard
 
