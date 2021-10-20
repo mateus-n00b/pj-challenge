@@ -20,6 +20,7 @@
 - A aplicação em si está lenta devido ao consumo da API. Os datasets são grandes e demorados para baixar.
 - Foi necessário definir o [boot timeout](https://devcenter.heroku.com/changelog-items/364) do heroku em 280s.
 - Para executar a api é preciso incluir os .csv enviados por email na pasta dados_projetos.
+- Ao selecionar Produto, o gráfico é gerado individualmente.
 
 ##BoT
 **Para executar o bot, entre no diretório bot/ basta rodar o comando ``python comex_bot.py`` e aguardar :D**.
