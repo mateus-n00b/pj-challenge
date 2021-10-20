@@ -31,4 +31,7 @@
 - Estou utilizando ngrok para expôr a API rodando em minha máquina (```ngrok http 5000```).
 - Consertar a apresentação do gráfico de pizza, por algum motivo ele só é construído quando se passa números.
 
+##TODO
+- Documentar o código
+
 Dúvidas? Contate-me :smile:
